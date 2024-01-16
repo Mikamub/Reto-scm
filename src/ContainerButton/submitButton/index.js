@@ -2,8 +2,7 @@ import './submitButton.css'
 
 function SubmitButton(){
     return (
-        <button className='submitButton'>
-        </button>
+        <button className='submitButton'>Aplicar</button>
     );
 }
 

@@ -16,19 +16,33 @@
 }
 
 .container-button-action {
-    justify-content: center;
     flex-direction: column;
-    gap: 10px;
     display: flex;
     margin: 25px 20px;
+    gap: 10px;
 }
 
-/* @media (max-width: 500px) {
+@media (max-width: 500px) {
     .container-button-select {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
         height: 40%;
         width: auto;
+        margin: 0;
     }
-} */
+
+    .container-button-action {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 40%;
+        width: auto;
+        margin: 0;
+    }
+
+    .container-button {
+        width: auto;
+        height: 15vh;
+    }
+}
+
+/* grid-template-rows: repeat(2, 1fr); */

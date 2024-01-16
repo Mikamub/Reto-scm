@@ -5,3 +5,17 @@
     border-radius: 40px;
     display: flex;
 }
+
+h1 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    margin-block-start: 10px;
+}
+
+.logo {
+    width: 57px;
+    height: 57px;
+}
