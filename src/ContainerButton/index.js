@@ -6,14 +6,16 @@ import {ClearButton} from './clearButton';
 function ContainerButton(){
     return (
         <div className='container-button'>
-            <SelectButton/>
-            <SelectButton/>
-            <SelectButton/>
-            <SubmitButton/>
-            <ClearButton/>
+            <div className='container-button-select'>
+                <SelectButton/>
+                <SelectButton/>
+                <SelectButton/>
+            </div>
+            <div className= 'container-button-action'>            
+                <SubmitButton/>
+                <ClearButton/>
+            </div>
         </div>
-
-
     );
 }
 
