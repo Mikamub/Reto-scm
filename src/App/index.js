@@ -1,6 +1,7 @@
 import '../index.css'; 
 import { ContainerButton } from '../ContainerButton';
 import { Header } from '../Header';
+import ChartComponent from '../ChartGraph';
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
     <Header/>
     <ContainerButton/>
+    <ChartComponent/>
     </>
   );
 }
