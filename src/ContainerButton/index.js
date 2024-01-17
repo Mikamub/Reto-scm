@@ -1,19 +1,18 @@
 import './containerButton.css'; 
 import { SelectButton } from './selectButton';
-import {SubmitButton} from './submitButton';
-import {ClearButton} from './clearButton';
 
 function ContainerButton(){
+
     return (
         <div className='container-button'>
             <div className='container-button-select'>
-                <SelectButton/>
+            <SelectButton />
                 <SelectButton/>
                 <SelectButton/>
             </div>
             <div className= 'container-button-action'>            
-                <SubmitButton/>
-                <ClearButton/>
+                <button className='submitButton'>Aplicar</button>
+                <button className='clearButton'> Limpiar</button>
             </div>
         </div>
     );

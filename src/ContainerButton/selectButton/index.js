@@ -1,27 +1,34 @@
 import './selectButton.css'; 
+import React, { useEffect } from 'react';
+import Papa from 'papaparse';
+import data from '../../Data/test_contrato_monthly.csv';
 
-function SelectButton(){
+function SelectButton() {
+
+    useEffect(() => {
+
+        // Lee el archivo CSV usando papaparse
+        Papa.parse(data, {
+        header: true,
+        download: true,
+        dynamicTyping: true,
+        delimiter: ',',
+        complete: (result) => {
+            console.log(result);
+        },
+        });
+        }, [])
+
     return (
-            <select className="select-button" name="opciones">
-                <option value="opcion1">Opción 1</option>
-                <option value="opcion2">Opción 2</option>
-                <option value="opcion3">Opción 3</option>
-            </select>
+    <>
+        <select className="select-button" name="opciones">
+            <option>
+                option
+            </option>
+        </select>
+    </>
+    
     );
 }
 
-export { SelectButton};
-
-// eslint-disable-next-line no-lone-blocks
-{/* <label htmlFor="select">Selecciona una opción:</label>
-<select id="select" value={selectedOption} onChange={handleSelectChange}>
-    <option value="" disabled>
-    Selecciona una opción
-    </option>
-        {options.map((option) => (
-    <option key={option} value={option}>
-        {option}
-    </option>
-    ))}
-</select>
-{selectedOption && <p>Seleccionado: {selectedOption}</p>} */}
+export { SelectButton };
