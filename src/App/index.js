@@ -25,21 +25,22 @@ function App() {
     setActiveTab(tabNumber);
   };
 
-  const handleSelectValuesOne = (values) => { //Manejo
+  const handleSelectValuesOne = (values) => { //Manejo de los select de la pestaña uno
     setSelectedValuesOne(values);
   };
 
-  const handleSelectValuesTwo = (values) => {
+  const handleSelectValuesTwo = (values) => { //Manejo de los select de la pestaña dos
     setSelectedValuesTwo(values);
   };
 
+  //Componente Header, Botones de las pestañas y su respectivo evento de cambio de componentes
   return (
     <>
       <Header />
       <div className='tab-header'>
-        <span className='container-tab'>
+        <span className='container-tab'> 
         <button className={activeTab === 1 ? 'active-tab' : 'tab'}
-            onClick={() => handleTabChange(1)}>Resultados Staff Planning</button>
+            onClick={() => handleTabChange(1)}>Resultados Staff Planning</button> 
           <button className={activeTab === 2 ? 'active-tab' : 'tab'} onClick={() => handleTabChange(2)}>Estadisticas</button>
           </span>
         </div>

@@ -5,19 +5,19 @@ import { Bar } from 'react-chartjs-2';
 import Papa from 'papaparse';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Legend } from 'chart.js';
 
-ChartJS.register(
+ChartJS.register( 
     CategoryScale,
     LinearScale,
     BarElement,
     Legend
 );
 
-function Estadisticas({ selectedValues }){
-    const [chartData, setChartData] = useState({
+function Estadisticas({ selectedValues }){ //props del valor que se cliqueo en los selects de la pestaña dos
+    const [chartData, setChartData] = useState({  //Ejes y datos del grafico
         labels: [],
         datasets: [],
     });
-    const [chartOptions, setChartOptions] = useState({});
+    const [chartOptions, setChartOptions] = useState({}); //opciones para configurar el chart
 
     useEffect(() => {
         Papa.parse(Data, {
@@ -25,32 +25,23 @@ function Estadisticas({ selectedValues }){
             header: true,
             dynamicTyping: true,
             delimiter: "",
-            complete: (result) => {
+            complete: (result) => { // Se ejecuta después de analizar el archivo CSV con PapaParse
                 
-                //console.log(result.data);
-                let filteredData = result.data;
-                console.log(selectedValues)
+                let filteredData = result.data; // Filtrar datos según los valores seleccionados en los selects
 
                 if (selectedValues.tienda !== '' && selectedValues.tienda !=='Todos') {
                     const tiendaNumber = parseInt(selectedValues.tienda.match(/\d+/)[0], 10);
-                    console.log(tiendaNumber)
                     filteredData = filteredData.filter(item => item['tienda'] === tiendaNumber);
-                    //console.log(filteredData)
                 }
                 if (selectedValues.periodo !== ''&& selectedValues.periodo !=='Todos') {
                     const periodoNumber = parseInt(selectedValues.periodo.match(/\d+/)[0], 10);
-                    //console.log(periodoNumber)
                     filteredData = filteredData.filter(item => item['mes'] === periodoNumber);
-                    //console.log(filteredData)
                 }
-                console.log(filteredData['cobertura_media'])
         
-                const dataCobertura = filteredData.map(item => item.cobertura_media)
-                console.log(dataCobertura)
-                
+                const dataCobertura = filteredData.map(item => item.cobertura_media) // Extracción de datos para el gráfico
                 const dataMeses = filteredData.map(item => item.mes);
-                console.log(dataMeses)
 
+                // Actualizar el estado del gráfico con los datos filtrados
                 setChartData({
                     labels: dataMeses,
                     datasets: [
@@ -65,7 +56,8 @@ function Estadisticas({ selectedValues }){
                         },
                     ],
                 });
-                
+
+                // Configurar opciones del gráfico
                 setChartOptions({
                     responsive: true,
                     plugins: {
@@ -85,6 +77,17 @@ function Estadisticas({ selectedValues }){
                             ticks: {
                                 precision: 0, 
                             },
+                            title: {
+                                display: true,
+                                text: 'Meses',
+                            },
+                        },
+                        y: {
+                            type: 'linear', 
+                            title: {
+                                display: true,
+                                text: 'Cobertura Media',
+                            },
                         },
                     },
                 });
@@ -92,15 +95,14 @@ function Estadisticas({ selectedValues }){
         });
     }, [selectedValues]);
 
-    //console.log(selectedValues);
-    
-
     return (
+        // Renderizar el componente de gráfico de barras si hay datos disponibles
         chartData.datasets.length > 0 ? (
             <div className='container-graph'>
                 <Bar className='graph' options={chartOptions} data={chartData} />
             </div>
         ) : (
+            // Mostrar "Cargando..." si no hay datos disponibles
             <div> Cargando ... </div>
         )
     );

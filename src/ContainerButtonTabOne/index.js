@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import { SelectTabOne } from './selectTabOne/selectTabOne';
 import './containerButton.css'; 
 
-function ContainerButtonTabOne({onSelectValuesOne}) {
+function ContainerButtonTabOne({onSelectValuesOne}) { //props para manejar las opciones del select
     const [selectedValuesOne, setSelectedValuesOne] = useState({ tienda: '', periodo: '', cargo: '' });
 
     const handleSelectTienda = (tienda) => {
