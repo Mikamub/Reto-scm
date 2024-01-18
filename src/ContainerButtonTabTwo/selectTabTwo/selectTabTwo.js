@@ -1,4 +1,4 @@
-import './selectButton.css'; 
+import './selectButtonTwo.css'; 
 import React, { useState,useEffect } from 'react';
 import Papa from 'papaparse';
 import data from '../../Data/test_output_planning_monthly.csv';
@@ -36,12 +36,12 @@ function SelectTabTwo({ onSelectTienda, onSelectPeriodo }) {
 
     return (
         <>
-            <select className="select-button" name="opciones" onChange={handleTiendaChange} value={selectedTienda}>
+            <select className="select-button-two" name="opciones" onChange={handleTiendaChange} value={selectedTienda}>
                 {nameOptionsTienda.map((name, index) => (
                     <option key={index} value={name}>Tienda: {name}</option>
                 ))}
             </select>
-            <select className="select-button" name="opciones" onChange={handlePeriodoChange} value={selectedPeriodo}>
+            <select className="select-button-two" name="opciones" onChange={handlePeriodoChange} value={selectedPeriodo}>
                 {nameOptionsPeriodo.map((name, index) => (
                     <option key={index} value={name}> Mes: {name}</option>
                 ))}

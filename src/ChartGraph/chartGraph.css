@@ -1,21 +1,19 @@
 .container-graph {
-    background-color: black;
-    width: 75%;
+    width: 65%;
     border: none;
     display: flex;
     align-items: center;
+    background-color: white;
+    border-radius: 40px 0px;
 }
 
 .graph {
-    background-color: aquamarine;
-    margin: 20px;
+    margin: 30px;
 }
 
 @media (max-width: 890px) {
-    .graph {}
-
     .container-graph {
-        margin: 40px;
+        margin: 5% 20%;
     }
 
 }

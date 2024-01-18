@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import { SelectTabOne } from './selectTabOne/selectTabOne';
 import './containerButton.css'; 
 
-function ContainerButtonTabOne() {
+function ContainerButtonTabOne({onSelectValuesOne}) {
     const [selectedValuesOne, setSelectedValuesOne] = useState({ tienda: '', periodo: '', cargo: '' });
 
     const handleSelectTienda = (tienda) => {
@@ -19,6 +19,7 @@ function ContainerButtonTabOne() {
 
     const handleSubmit = () => {
         console.log('Valores seleccionados:', selectedValuesOne);
+        onSelectValuesOne(selectedValuesOne);
         };
 
     return (

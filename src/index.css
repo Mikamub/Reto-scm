@@ -16,7 +16,6 @@ body {
   justify-content: end;
   display: flex;
   height: 5vh;
-  background-color: brown;
 }
 
 .tab {
@@ -28,17 +27,14 @@ body {
   border-color: white;
   color: #8B8A8C;
   font-family: 'Hind Vadodara', sans-serif;
-  font-size: 24px;
+  font-size: 12px;
   font-style: normal;
-  line-height: normal;
 }
 
 .active-tab {
-  color: black;
   font-family: 'Hind Vadodara', sans-serif;
-  font-size: 24px;
+  font-size: 12px;
   font-style: normal;
-  line-height: normal;
   border-top-color: #4981F2;
   border-bottom-color: white;
   border-top-width: 2px;
@@ -53,12 +49,10 @@ body {
 .container-tab {
   display: flex;
   width: 50%;
-  background-color: chocolate;
   gap: 5px;
 }
 
 .container-chart {
-  background-color: yellowgreen;
   display: flex;
   justify-content: space-between;
 }

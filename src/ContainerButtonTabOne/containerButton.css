@@ -22,16 +22,7 @@
     gap: 10px;
 }
 
-.clearButton {
-    border: none;
-    width: 100%;
-    height: 7vh;
-    border-radius: 30px;
-    justify-content: center;
-    background-color: white;
-}
-
-.clearButton:hover {
+.submitButton:hover {
     background-color: #8DAEF2;
 }
 
@@ -40,8 +31,12 @@
     width: 100%;
     height: 7vh;
     border-radius: 30px;
-    justify-content: center;
     background-color: #446FF2;
+    color: white;
+    font-family: 'Hind Vadodara', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
 }
 
 @media (max-width: 890px) {
@@ -50,17 +45,7 @@
         margin: 15px 10px;
         height: 4vh;
     }
-}
 
-@media (max-width: 890px) {
-    .clearButton {
-        width: 80%;
-        margin: 15px 10px;
-        height: 4vh;
-    }
-}
-
-@media (max-width: 890px) {
     .container-button-select {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -70,8 +55,8 @@
     }
 
     .container-button-action {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        align-items: center;
         height: 40%;
         width: auto;
         margin: 0;
@@ -82,5 +67,3 @@
         height: 15vh;
     }
 }
-
-/* grid-template-rows: repeat(2, 1fr); */

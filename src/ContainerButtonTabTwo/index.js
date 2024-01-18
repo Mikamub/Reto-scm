@@ -1,8 +1,8 @@
 import React, { useState} from 'react';
 import { SelectTabTwo } from './selectTabTwo/selectTabTwo';
-import './containerButton.css'; 
+import './containerButtonTwo.css'; 
 
-function ContainerButtonTabTwo() {
+function ContainerButtonTabTwo ({onSelectValuesTwo}) {
     const [selectedValues, setSelectedValues] = useState({ tienda: '', periodo: '' });
 
     const handleSelectTienda = (tienda) => {
@@ -15,16 +15,16 @@ function ContainerButtonTabTwo() {
 
     const handleSubmit = () => {
         console.log('Valores seleccionados:', selectedValues);
-        // Aquí puedes enviar los valores a otro componente o realizar las acciones necesarias.
+        onSelectValuesTwo(selectedValues);
     };
 
     return (
-        <div className='container-button'>
-            <div className='container-button-select'>
+        <div className='container-button-two'>
+            <div className='container-button-select-two'>
                 <SelectTabTwo onSelectTienda={handleSelectTienda} onSelectPeriodo={handleSelectPeriodo} />
             </div>
-            <div className='container-button-action'>
-                <button className='submitButton' onClick={handleSubmit}>
+            <div className='container-button-action-two'>
+                <button className='submitButton-two' onClick={handleSubmit}>
                     Aplicar
                 </button>
             </div>

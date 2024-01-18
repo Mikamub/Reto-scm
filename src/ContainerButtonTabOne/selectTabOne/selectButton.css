@@ -5,6 +5,10 @@
     border-radius: 30px;
     justify-content: center;
     display: flex;
+    font-family: 'Hind Vadodara', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    color: #8B8A8C;
 }
 
 @media (max-width: 890px) {
@@ -12,5 +16,9 @@
         width: 80%;
         margin: 15px 10px;
         height: 5vh;
+        font-family: 'Hind Vadodara', sans-serif;
+        font-size: 17px;
+        font-style: normal;
+        color: #8B8A8C;
     }
 }
