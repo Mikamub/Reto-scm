@@ -89,6 +89,7 @@ function Estadisticas({ selectedValues }) {
                         },
                     },
                     scales: {
+                
                         x: {
                             title: {
                                 display: true,
@@ -98,6 +99,8 @@ function Estadisticas({ selectedValues }) {
                             },
                         },
                         y: {
+                            min: 0, 
+                            max: 100,
                             type: 'linear',
                             title: {
                                 display: true,
@@ -106,6 +109,7 @@ function Estadisticas({ selectedValues }) {
                             ticks: {
                                 callback: function(value) {
                                     return value + '%'; // Formato de etiquetas del eje Y con porcentaje
+                                    
                                 },
                             },
                         },
