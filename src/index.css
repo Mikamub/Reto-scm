@@ -1,3 +1,4 @@
+/* eslint-disable-next-line */
 #root {
   margin: 25px;
   position: relative;
@@ -9,7 +10,6 @@ body {
   background-color: #D1DAFF;
   margin: 0;
   font-family: 'Hind Vadodara', sans-serif;
-  overflow: hidden;
 }
 
 .tab-header {
@@ -55,6 +55,68 @@ body {
 .container-chart {
   display: flex;
   justify-content: space-between;
+}
+
+.container-chart-estadisticas-chart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 40px;
+}
+
+.tab-select {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0%;
+  margin-top: 2%;
+  font-weight: 100;
+}
+
+p {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 0%;
+  margin-top: 2%;
+}
+
+.container-graphCargo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 40px;
+  background-color: white;
+
+}
+
+.container-graphBar {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.container-graphPolar {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media (max-width: 890px) {

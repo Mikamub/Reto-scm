@@ -3,13 +3,14 @@ import './chartGraph.css';
 import Data from '../Data/test_contrato_monthly.csv';
 import { Bar } from 'react-chartjs-2';
 import Papa from 'papaparse';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Legend } from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Legend, Tooltip } from 'chart.js';
 
 ChartJS.register(
     CategoryScale,
     LinearScale,
     BarElement,
-    Legend
+    Legend, 
+    Tooltip
 );
 
 function PlaningStaff({ selectedValues }){ //props con valores de los selects
@@ -57,8 +58,9 @@ function PlaningStaff({ selectedValues }){ //props con valores de los selects
                     datasets: [
                     {
                     data: [contratadosNeSum,contratadosSpSum],
-                    borderColor: ["black","black"],
-                    backgroundColor: ["#446FF2","#8DAEF2"],
+                    borderColor: ["rgba(68,111,242,1)","rgba(141,174,242,1)"],
+                    backgroundColor: ["rgba(68,111,242,0.8)","rgba(141,174,242,0.8)"],
+                    borderWidth: 2,
                     },
                     ],
                 });
@@ -74,11 +76,12 @@ function PlaningStaff({ selectedValues }){ //props con valores de los selects
                             display: true,
                             text: "Overview",
                         },
-                        
+                        datalabels: {
+                            display: false, // Oculta los valores dentro de las barras
+                        },
                     },
                     scales: {
                         x: {
-                            
                             position: 'bottom',
                             title: {
                                 display: false,
@@ -86,14 +89,21 @@ function PlaningStaff({ selectedValues }){ //props con valores de los selects
                             },
                         },
                         y: {
-                            type: 'linear', 
+                            type: 'linear',
                             title: {
                                 display: true,
                                 text: 'Cantidad de Contratos',
                             },
                         },
                     },
-                    
+                    tooltips: {
+                        callbacks: {
+                            label: function (context) {
+                                // Mostrar el valor de la barra en el tooltip
+                                return context.dataset.label + ': ' + context.formattedValue;
+                            },
+                        },
+                    },
                 });
             },
         });
@@ -102,7 +112,7 @@ function PlaningStaff({ selectedValues }){ //props con valores de los selects
     return (
         chartData.datasets.length > 0 ? (
             <div className='container-graph'>
-                <Bar className='graph' options={chartOptions} data={chartData} />
+                <Bar options={chartOptions} data={chartData} />
             </div>
         ) : (
             <div> Cargando ... </div>

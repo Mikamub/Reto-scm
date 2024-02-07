@@ -1,0 +1,21 @@
+.select-button-three {
+    border: none;
+    width: 50%;
+    height: 7vh;
+    border-radius: 30px;
+    justify-content: center;
+    display: flex;
+    color: #8B8A8C;
+    font-family: 'Hind Vadodara', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    margin: auto;
+}
+
+@media (max-width: 890px) {
+    .select-button-three {
+        width: 80%;
+        margin: 10px 30px;
+        height: 5vh;
+    }
+}

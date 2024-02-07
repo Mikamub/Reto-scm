@@ -5,10 +5,28 @@
     align-items: center;
     background-color: white;
     border-radius: 40px 0px;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-.graph {
-    margin: 30px;
+.graphNew {
+    width: 95%;
+    height: 100%;
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    flex-direction: column;
+}
+
+.graphPolar {
+    width: auto;
+    height: auto;
+    border: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 @media (max-width: 890px) {
